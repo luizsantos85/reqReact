@@ -1,0 +1,54 @@
+.formGeral{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    h2{
+        font-size: 2.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    form{
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+
+        input{
+            width: 100%;
+            height: 35px;
+            padding: 10px;
+            font-size: 1rem;
+            margin: 10px 0;
+            background-color: fff;
+            border: 0;
+            border-radius: 10px;
+
+            &:focus{
+                border: 1px solid #333;
+            }
+        }
+
+        button{
+            padding: 10px 20px;
+            background-color: #a29bfe;
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all ease .4s;
+            &:hover{
+            background-color: #a29bfe9f;
+                color: #333;
+            }
+        }
+
+
+    }
+}
