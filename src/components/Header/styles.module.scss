@@ -29,7 +29,7 @@ header {
             li {
                 list-style: none;
                 a {
-                    margin-left: 15px;
+                    margin-left: 20px;
                     color: #dfe6e9;
                     text-decoration: none;
                     font-weight: 500;
@@ -40,6 +40,15 @@ header {
                     color: #2d3436;
                 }
             }
+        }
+        .logout{
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            margin-left: 15px;
+            color: #333;
+            font-size: 1rem;
+
         }
     }
 }

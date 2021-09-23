@@ -47,8 +47,20 @@
             background-color: #a29bfe9f;
                 color: #333;
             }
+            &:disabled{
+                cursor: wait;
+                opacity: .6;
+            }
         }
 
+        .error{
+            width: 100%;
+            background-color: #e74c3c;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
 
     }
 }

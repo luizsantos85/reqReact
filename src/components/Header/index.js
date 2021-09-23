@@ -1,46 +1,74 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { NavLink } from 'react-router-dom';
+import { isLogged, doLogout } from '../../Helper/AuthHandler';
 
 const Header = () => {
-    return (
-        <header>
-            <div className={`container ${styles.container}`}>
-                <div className={styles.logo}>LHSCODE</div>
-                <nav className={styles.menu}>
-                    <ul>
+   const logged = isLogged();
+   const handleLogout = () => {
+      doLogout();
+   };
+
+   return (
+      <header>
+         <div className={`container ${styles.container}`}>
+            <div className={styles.logo}>LHSCODE</div>
+            <nav className={styles.menu}>
+               <ul>
+                  <li>
+                     <NavLink to="/" exact activeClassName={styles.active}>
+                        Home
+                     </NavLink>
+                  </li>
+                  {!logged && (
+                     <>
                         <li>
-                            <NavLink
-                                to="/"
-                                exact
-                                activeClassName={styles.active}
-                            >
-                                Home
-                            </NavLink>
+                           <NavLink
+                              to="/cadastro"
+                              exact
+                              activeClassName={styles.active}
+                           >
+                              Cadastro
+                           </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/cadastro"
-                                exact
-                                activeClassName={styles.active}
-                            >
-                                Cadastro
-                            </NavLink>
+                           <NavLink
+                              to="/login"
+                              exact
+                              activeClassName={styles.active}
+                           >
+                              Login
+                           </NavLink>
+                        </li>
+                     </>
+                  )}
+
+                  {logged && (
+                     <>
+                        <li>
+                           <NavLink
+                              to="/car-register"
+                              exact
+                              activeClassName={styles.active}
+                           >
+                              Cadastrar-carro
+                           </NavLink>
                         </li>
                         <li>
-                            <NavLink
-                                to="/login"
-                                exact
-                                activeClassName={styles.active}
-                            >
-                                Login
-                            </NavLink>
+                           <button
+                              className={styles.logout}
+                              onClick={handleLogout}
+                           >
+                              Sair
+                           </button>
                         </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-    );
+                     </>
+                  )}
+               </ul>
+            </nav>
+         </div>
+      </header>
+   );
 };
 
 export default Header;
