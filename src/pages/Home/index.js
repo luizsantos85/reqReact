@@ -13,7 +13,7 @@ const Home = () => {
    const getCars = async () => {
       setCars([]);
       setLoading(true);
-      const result = await api.getCars();
+      const result = await api.getAllCars();
       setLoading(false);
       if (result.error === '') {
          setCars(result.cars);

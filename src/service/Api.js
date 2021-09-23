@@ -38,7 +38,7 @@ export default () => {
             let json = await request('post','/auth/login',{email,password});
             return json;
         },
-        getCars: async () =>{
+        getAllCars: async () =>{
             let json = await request('get','/cars',{});
             return json;
         }

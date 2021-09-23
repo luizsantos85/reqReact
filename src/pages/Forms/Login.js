@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './styled.module.scss';
 import useSpai from '../../service/Api.js';
-import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const api = useSpai();
-    const history = useHistory();
 
     const [loading,setLoading] = React.useState(false)
     const [email, setEmail] = React.useState('');
@@ -20,16 +18,12 @@ const Login = () => {
             setLoading(false);
             if (result.error === '') {
                 localStorage.setItem('token', result.token);
-                history.push('/');
+                window.location.href = '/';
             } else {
                 setError('E-mail e/ou senha inválidos.');
-                setEmail('');
-                setPassword('');
             }
         } else {
             setError('Preencha os campos corretamente.');
-            setEmail('');
-            setPassword('');
         }
     };
 
