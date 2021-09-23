@@ -54,17 +54,14 @@ const Header = () => {
                               Cadastrar-carro
                            </NavLink>
                         </li>
-                        <li>
-                           <button
-                              className={styles.logout}
-                              onClick={handleLogout}
-                           >
-                              Sair
-                           </button>
-                        </li>
                      </>
                   )}
                </ul>
+               {logged && (
+                  <button className={styles.logout} onClick={handleLogout}>
+                     Sair
+                  </button>
+               )}
             </nav>
          </div>
       </header>
